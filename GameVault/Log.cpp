@@ -1,25 +1,32 @@
+///////////////////////////////////////////////////////////////////////////////
+//
+// 2020 DokuSouSei, GameVault
+//
+// Logging System
+//
+// 31-OCT-2020
+//
+
 #include "Log.h"
 
-
-namespace GameVault
+namespace Log
 {
-
-	std::shared_ptr<spdlog::logger> Log::s_SysLog;
-	std::shared_ptr<spdlog::logger> Log::s_DevLog;
-
-	void Log::Init()
+	// 
+	std::shared_ptr<spdlog::logger> Client::systemLog;
+	 
+	//
+	// Init: Logging Client
+	//
+	void Client::Init()
 	{
-		// Set Global Log Pattern
+		// Global log format
 		spdlog::set_pattern("[%T] %^%l%$: %v");
 
-		// Set System Log
-		s_SysLog = spdlog::stdout_color_mt("SYSLOG");
-		s_SysLog->set_level(spdlog::level::debug);
+		// Log type
+		systemLog = spdlog::stdout_color_mt("SYSLOG");
 
-		// Set Development Log
-		s_DevLog = spdlog::stdout_color_mt("DEVLOG");
-		s_DevLog->set_pattern("\n//// DEVELOPMENT //////////////////////////////////////////////////////////////\n[%T]|%^%=40l%$| PROCESS %p | THREAD %t|\n[MESSAGE] %v");
-		s_DevLog->set_level(spdlog::level::trace);
+		// Log Level
+		systemLog->set_level(spdlog::level::debug);
 	}
 
 }

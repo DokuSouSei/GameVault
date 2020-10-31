@@ -1,23 +1,44 @@
+///////////////////////////////////////////////////////////////////////////////
+//
+// 2020 DokuSouSei, GameVault
+//
+// Application Startup
+//
+// 31-OCT-2020
+//
+
 #include <iostream>
 
 #include "GameVault.h"
 
+///////////////////////////////////////////////////////////////////////////////
+//
+// Main
+//
+// The Big Bahoola!
+//
 int main(int argc, char** argv)
 {
 
 	std::cout << "Welcome to GameVault!" << std::endl;
-	GameVault::Log::Init();
-	GameVault::Log::s_SysLog->warn("Test Warning");
-	GameVault::Log::s_SysLog->info("This is a test info log output");
-	GameVault::Log::s_SysLog->critical("Line {0}",__LINE__);
-	GameVault::Log::s_DevLog->critical("Test Dev Log");
-	GameVault::Log::s_DevLog->warn("Uninitialized COMM @ LINE {0}", __LINE__);
+	
+	// Initialized logging
+	Log::Client::Init();
 
+	// Test log
+	LOG_WARN("This is a test Log");
+	LOG_WARN("This is a test Log");
+	LOG_WARN("This is a test Log");
+	LOG_WARN("This is a test Log");
+	LOG_WARN("This is a test Log");
+	LOG_WARN("This is a test Log");
 
+	
 	while (true)
 	{
 		// Keep Application Open
 	}
 
+	// Close application when done
 	return 0;
 }
