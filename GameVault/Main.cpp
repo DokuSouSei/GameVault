@@ -4,7 +4,7 @@
 //
 // Application Startup
 //
-// 31-OCT-2020
+// 01-NOV-2020
 //
 
 #include <iostream>
@@ -25,13 +25,13 @@ int main(int argc, char** argv)
 	// Initialized logging
 	Log::Client::Init();
 
-	// Test log
+	// Test logging
+	LOG_DIAG("This is a test Log");
+	LOG_DEBUG("This is a test Log");
+	LOG_INFO("This is a test Log");
 	LOG_WARN("This is a test Log");
-	LOG_WARN("This is a test Log");
-	LOG_WARN("This is a test Log");
-	LOG_WARN("This is a test Log");
-	LOG_WARN("This is a test Log");
-	LOG_WARN("This is a test Log");
+	LOG_ERR("This is a test Log");
+	LOG_FATAL("This is a test Log");
 
 	
 	while (true)

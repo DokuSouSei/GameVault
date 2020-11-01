@@ -4,7 +4,7 @@
 //
 // Logging System
 //
-// 31-OCT-2020
+// 01-NOV-2020
 //
 
 #include "Log.h"
@@ -20,7 +20,7 @@ namespace Log
 	void Client::Init()
 	{
 		// Global log format
-		spdlog::set_pattern("[%T] %^%l%$: %v");
+		spdlog::set_pattern("[%T] %^%-8l%$: %v");
 
 		// Log type
 		systemLog = spdlog::stdout_color_mt("SYSLOG");

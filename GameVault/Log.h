@@ -4,7 +4,7 @@
 //
 // Logging System
 //
-// 31-OCT-2020
+// 01-NOV-2020
 //
 
 #pragma once
@@ -22,7 +22,7 @@
 #define LOG_DEBUG(...)		::Log::Client::systemLog->debug(__VA_ARGS__)
 #define LOG_INFO(...)		::Log::Client::systemLog->info(__VA_ARGS__)
 #define LOG_WARN(...)		::Log::Client::systemLog->warn(__VA_ARGS__)
-#define LOG_ERR(...)		::Log::Client::systemLog->err(__VA_ARGS__)
+#define LOG_ERR(...)		::Log::Client::systemLog->error(__VA_ARGS__)
 #define LOG_FATAL(...)		::Log::Client::systemLog->critical(__VA_ARGS__)
 
 //
